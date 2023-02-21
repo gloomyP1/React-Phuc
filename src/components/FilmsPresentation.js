@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 // import { Films } from '../shared under/ListOfFilms';
 // Custom hook for toggling theme mode
 function useToggle(initialValue) {
@@ -37,7 +38,9 @@ export default function FilmPresentation({films}) {
                 <p className="card-text text-center font-weight-bold">{film.nation}</p>
                 <p className="card-text text-center">{film.year}</p> */}
                 <div className="d-flex justify-content-center mt-3">
-                  <button className="btn btn-outline-dark w-100" onClick={() => handleOpenModal(film)}>Detail</button>
+                  <Link to={`detail/${film.id}`}>
+                  <button className="btn btn-outline-dark w-100">Detail</button>
+                  </Link>
                 </div>
               </div>
             </div>
